@@ -25,6 +25,11 @@ classDiagram
     note for Card "we don't store value 'cos different games
         may have different card values for same card.
         Pontoon King = 10, but Snap has no value"
+        
+    note for House "play_out is called when all Players finished,
+    it should be fed the count to beat.
+    With that it deals itself cards until its count >= the target
+    or until it goes bust"    
     class Card{
         -string _suit
         -string _rank
@@ -51,6 +56,7 @@ classDiagram
         -Hand hand
     }
     class House{
+        int play_out(count_to_beat)
         
     }
     
