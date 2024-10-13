@@ -22,6 +22,9 @@ classDiagram
     Hand --> PontoonCard: array of
     Person --> Hand: has a
     House --|> Person
+    note for Card "we don't store value 'cos different games
+        may have different card values for same card.
+        Pontoon King = 10, but Snap has no value"
     class Card{
         -string _suit
         -string _rank
