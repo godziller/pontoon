@@ -43,7 +43,7 @@ classDiagram
     }
     class Deck{
     -PontoonCard _cards[]
-    void shuffle_deck()
+    None shuffle_deck()
     PontoonCard deal_card()
     }
     class Hand{
