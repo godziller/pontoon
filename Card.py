@@ -1,27 +1,13 @@
 import sys
 from multiprocessing.managers import Value
 
-
 class Card:
     suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
     rank_list = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 
     def __init__(self, suit, rank):
-        try:
-            if suit in self.suit_list:
-                self._suit = suit
-            else:
-                raise ValueError('Invalid Suit.')
-        except ValueError:
-            print('Invalid Suit')
-
-        try:
-            if rank in self.rank_list:
-                self._rank = rank
-            else:
-                raise ValueError("Invalid Rank")
-        except ValueError:
-            print("Invalid Rank")
+        self._suit = suit
+        self._rank = rank
 
     def get_suit(self):
         return self._suit
@@ -35,6 +21,20 @@ class Card:
 
 
 if __name__ == "__main__":
-    my_card = Card("Spades", "K")
-    print(my_card)
+    suit = 'Spades'
+    rank =  "K"
+
+    #Validating Suit
+    try:
+        if suit not in Card.suit_list:
+            raise ValueError("Invalid Suit")
+    except ValueError:
+        print(f"Invalid Suit: {suit}")
+
+    #validating rank
+    try:
+        my_card = Card(suit, rank)
+        print(my_card)
+    except ValueError:
+        print(f"Invalid Rank: {rank}")
     #print(my_card)
