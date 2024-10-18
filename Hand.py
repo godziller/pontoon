@@ -14,6 +14,10 @@ class Hand(object):
     def get_value(self):
         return self._value
 
+    @property
+    def value(self):
+        return self._value
+
     def __str__(self):
         return "\n".join(str(card) for card in self._handlist)
 
