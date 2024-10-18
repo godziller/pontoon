@@ -1,28 +1,30 @@
+from random import shuffle
+
 from Card import Card
 import random
+from PontoonCard import PontoonCard
 
-class Deck:
+
+class Deck(object):
     def __init__(self):
-        self.cardlist = []
-        for i in range(4):
-            for j in range(13):
-                self.cardlist.append(Card(j + 1, i + 1))
+        self._cardlist = []
+        for suit in Card.suit_list:
+            for rank in Card.rank_list:
+                self._cardlist.append(PontoonCard(suit,rank))
 
     def shuffle(self):
-        random.shuffle(self.cardlist)
+        random.shuffle(self._cardlist)
 
     def length(self):
-        return len(self.cardlist)
+        return len(self._cardlist)
 
-    def deal_top_card(self):
+    def deal_card(self):
         """ Remove and return the top card in the deck. """
-        return self.cardlist.pop()
+        return self._cardlist.pop()
 
     def __str__(self):
-        outstr = ''
-        for card in self.cardlist:
-            outstr = outstr + card.__str__() + '-'
-        return outstr
+            return "\n".join(str(card) for card in self._cardlist)
 
-deck = Deck()
-#print(deck.length())
+if __name__ == "__main__":
+    my_deck = Deck()
+    print(my_deck)

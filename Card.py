@@ -1,13 +1,12 @@
-import sys
-from multiprocessing.managers import Value
 
-class Card:
+class Card(object):
     suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
     rank_list = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 
-    def __init__(self, suit, rank):
-        self._suit = suit
-        self._rank = rank
+    def __init__(self, in_suit, in_rank):
+        self._suit = in_suit
+        self._rank = in_rank
+        self._value = 0         #default 0, expect subclasses to set correct value
 
     def get_suit(self):
         return self._suit
@@ -15,6 +14,20 @@ class Card:
     def get_rank(self):
         return self._rank
 
+    #^^ above im showing the old method ^^
+
+    #in this class below im showing the new method of getting a class property
+    @property
+    def rank(self):
+        return self._rank
+
+    @property
+    def suit(self):
+        return self._suit
+
+    @property
+    def value(self):
+        return self._value
 
     def __str__(self):
         return f"the {self._rank} of {self._suit}"
@@ -35,6 +48,9 @@ if __name__ == "__main__":
     try:
         my_card = Card(suit, rank)
         print(my_card)
+        print(my_card.rank)
+        print(my_card.value)
+
     except ValueError:
         print(f"Invalid Rank: {rank}")
     #print(my_card)
