@@ -42,11 +42,11 @@ class Terminal(object):
         return input(f"{str(player)}:  Would you like to HIT (H) or STICK (S):  ").upper()
 
     def print_screen(self, player_list):
-        os.system("clear")
+        os.system("clear")  #pretty printing by clearing the terminal each time before display table.
         print( f"{"Player":<10} | {"Hand":<30} | Count")
         print("-"*60)
         for player in player_list:
-            print( f"{str(player):<10} | {str(player.hand):<50} | Count: {str(player.hand.value)}")
+            print( f"{str(player):<10} | {str(player.hand):<30} | Count: {str(player.hand.value)}")
         print("-" * 60)
 
 if __name__ == "__main__":

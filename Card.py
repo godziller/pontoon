@@ -1,6 +1,8 @@
 
 class Card(object):
-    suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
+
+    old_suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
+    suit_list = ['\u2663', '\u2660', '\u2666', '\u2665']  # Clubs, Spades, Diamonds, Hearts
     rank_list = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 
     def __init__(self, in_suit, in_rank):
@@ -30,7 +32,8 @@ class Card(object):
         return self._value
 
     def __str__(self):
-        return f"the {self._rank} of {self._suit}"
+        #return f"the {self._rank} of {self._suit}" - old print for long strings
+        return f"{self._rank}{self._suit}"
 
 
 if __name__ == "__main__":
