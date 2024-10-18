@@ -3,9 +3,8 @@ from PontoonCard import PontoonCard
 
 class Player(object):
 
-    def __init__(self, in_name, in_age):
+    def __init__(self, in_name):
         self._name = in_name
-        self._age = in_age
         self._hand = Hand()     #Player HAS A hand
 
 
@@ -19,7 +18,7 @@ class Player(object):
 
 if __name__ == "__main__":
 
-    my_player = Player("Darren", 21)
+    my_player = Player("Darren")
     print(my_player)
     print(my_player.hand.value)
     new_card = PontoonCard("Hearts", "Q")

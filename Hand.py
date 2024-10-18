@@ -19,7 +19,7 @@ class Hand(object):
         return self._value
 
     def __str__(self):
-        return "\n".join(str(card) for card in self._handlist)
+        return ", ".join(str(card) for card in self._handlist)
 
 
 if __name__ == "__main__":
