@@ -11,8 +11,9 @@ class TestCard(TestCase):
         self.rank = rank
         self.card = Card(suit, rank)
 
-class TestInit(TestCard):
 
+
+class TestInit(TestCard):
 
     def test_not_none(self):
         self.assertIsNot(self.card, None)
@@ -23,4 +24,7 @@ class TestInit(TestCard):
         self.assertIn(self.suit, suit_list)
         self.assertIn(self.rank, rank_list)
 
- 
+    def test_suit_set(self):
+        self.assertEqual(self.suit, 'farts')
+
+
