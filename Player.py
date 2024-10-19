@@ -12,6 +12,8 @@ class Player(object):
     def hand(self):
         return self._hand
 
+
+
     def __str__(self):
         return self._name
 

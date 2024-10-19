@@ -18,6 +18,11 @@ class Hand(object):
     def value(self):
         return self._value
 
+    @value.setter
+    def value(self, value):
+        self._value = int(value)
+
+
     def __str__(self):
         return ", ".join(str(card) for card in self._handlist)
 

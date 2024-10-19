@@ -18,7 +18,7 @@ class Card(object):
 
     #^^ above im showing the old method ^^
 
-    #in this class below im showing the new method of getting a class property
+    #in this class below im showing the new getter method of getting a class property
     @property
     def rank(self):
         return self._rank
