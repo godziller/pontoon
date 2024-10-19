@@ -48,6 +48,16 @@ class Terminal(object):
             print( f"{str(player):<10} | {str(player.hand):<30} | Count: {str(player.hand.value)}")
         print("-" * 60)
 
+    def print_winner(self, player_list):
+        winning_hand = 0
+        winning_player = None
+        for player in player_list:
+            if player.hand.value > winning_hand:
+                winning_hand = player.hand.value
+                winning_player = player
+
+        print(f"The winning player is!: {winning_player}")
+
 if __name__ == "__main__":
     my_game = PontoonGame()
     terminal = Terminal()
@@ -101,9 +111,7 @@ if __name__ == "__main__":
                 count_to_beat = player.hand.value
                 my_game._game_leader = player
 
-
-    my_game.dealer.play_out(count_to_beat)
+    if my_game.dealer.play_out(count_to_beat) > 21:
+        my_game.dealer.hand.value = 0
     terminal.print_screen(my_game.players)
-
-    print(type(my_game._game_leader))
-    print(type(my_game.dealer))
+    terminal.print_winner(my_game.players)
