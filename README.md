@@ -20,6 +20,8 @@ Source code and documentation on Github - https://github.com/godziller/pontoon
 
 To run test suite use pytest
 
+If you want to run the game off dockerhub - run: docker run -it darrencounihan/pontoon:latest
+
 pytest test_project.py
 ## Design
 ### Classes: 
