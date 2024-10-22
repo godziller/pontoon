@@ -14,6 +14,8 @@ Finally, the dealer object is requested to play, given the highest active count 
 
 ## Running game
 
+Source code and documentation on Github - https://github.com/godziller/pontoon
+
 'python3 PontoonGame.py'
 
 To run test suite use pytest
@@ -39,8 +41,8 @@ pytest test_project.py
 - protected variables used across the code base
 - ample use of properties
 - generious use of docstrings for classes and non-obvious methods
-- test code in each class's __name__ block
-- sharable - used github to share code.
+- test code executable by pytest
+- sharable - used github to share code - https://github.com/godziller/pontoon
 
 ```mermaid
 
