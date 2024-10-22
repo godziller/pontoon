@@ -12,6 +12,13 @@ The game will loop through all players individually asking them to hit or stick.
 
 Finally, the dealer object is requested to play, given the highest active count at the table to beat.
 
+## Running game
+
+'python3 PontoonGame.py'
+
+To run test suite use pytest
+
+pytest test_project.py
 ## Design
 ### Classes: 
 
@@ -25,6 +32,7 @@ Finally, the dealer object is requested to play, given the highest active count 
 
 ### OOP Principles
 
+- I used a Markdown plugin - Mermaid - to draw some simple pretty pictures of my design
 - Inheritance/is-a: Dealer is a Player. PontoonCard is a Card
 - Composition/Aggregation: Player has-a Hand. PontoonGame has-a Deck/Dealer
 - protected method _calc_value() in PontoonCard
