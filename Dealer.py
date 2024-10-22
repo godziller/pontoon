@@ -3,15 +3,30 @@ from Player import Player
 
 class Dealer(Player):
     def __init__(self, playing_deck):
+        """
+        THe Dealer class is a subclass of Player.
+
+        This class adds specialized functionality specific to a Dealer.
+        The constructor takes in an instance of a playing deck to allow the Dealer instance to operator on that.
+
+        :param playing_deck: an instance of a created playing deck
+        """
+
         super().__init__("Dealer")
         self._deck = playing_deck
 
     def play_out(self, count_to_beat):
-        '''
-        Play_out method takes in an int representing the highest
-        count at the table. This is the target the Dealer has
-        to beat.
-        '''
+        """
+        play_out instructs the dealer instance to attempt to beat the count_to_beat integer.
+
+        This function is typically called when call the players have had their turn at the game.
+        count_to_beat represents the current round's highest hand held.
+        play_out will either succeed in beating this or going bust.
+        The user of this function will understand a return value greater than 21 implies bust.
+
+        :param count_to_beat: Integer representing the hand count at the table to beat.
+        :return: The Dealers Hand value after attempting to beat this.
+        """
         # The logic of a player hitting is to remove a card object from
         # -the deck and add it to the players hand.
         dealer_value = self.hand.value     #dealers current hand value.#

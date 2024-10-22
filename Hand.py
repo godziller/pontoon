@@ -2,12 +2,24 @@ from PontoonCard import PontoonCard
 #obj: add one card to hand
 
 class Hand(object):
+    """
+    The Hand Class represent a Player's hand.
+
+    The Hand class will contain a number of cards and a value. The value is the cumulative count of all cards held by the hand.
+    """
 
     def __init__(self):
         self._handlist = []
         self._value = 0
 
     def add_card(self, card):
+        """
+        add_card adds a card object to a hand instance
+
+        Along with adding a card, the value of the added card is added to the hand value on this call
+        :param card:
+        :return:
+        """
         self._handlist.append(card)
         self._value += card.value
 

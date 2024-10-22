@@ -2,7 +2,12 @@ from Hand import Hand
 from PontoonCard import PontoonCard
 
 class Player(object):
+    """
+    The Player class represents a player in a game.
 
+    This Class is quite simple in that it has 2 attributes - a name and a hand.
+    See the Hand Class description for information on that
+    """
     def __init__(self, in_name):
         self._name = in_name
         self._hand = Hand()     #Player HAS A hand

@@ -1,12 +1,35 @@
 
 class Card(object):
 
-    old_suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
-    suit_list = ['\u2663', '\u2660', '\u2666', '\u2665']  # Clubs, Spades, Diamonds, Hearts
+    #old_suit_list = ['Clubs', 'Spades', 'Diamonds', 'Hearts']
+    #suit_list = ['\u2663', '\u2660', '\u2666', '\u2665']  # Clubs, Spades, Diamonds, Hearts
     rank_list = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+    suits = {
+        'Clubs': '\u2663',
+        'Spades': '\u2660',
+        'Diamonds': '\u2666',
+        'Hearts': '\u2665'
+    }
+
 
     def __init__(self, in_suit, in_rank):
-        self._suit = in_suit
+        """
+           The Card constructor takes in the suit and the rank of the card to create
+
+           A Card has no concept of 'value' as different games may assign different values to a card.
+           It is expected a subclass of this type will set the value. Here we set it to 0 to reflect this.
+           This allows this class to supply a reusable getter for value
+
+           :param in_suit: the suit of the card
+           :param in_rank: the rank of the card
+           """
+
+        # Check if the input suit is a full name or a symbol
+        if in_suit in self.suits:
+            self._suit = self.suits[in_suit]  # Convert full name to symbol
+        else:
+            raise ValueError("Invalid Suit")
+
         self._rank = in_rank
         self._value = 0         #default 0, expect subclasses to set correct value
 
@@ -38,24 +61,20 @@ class Card(object):
 
 if __name__ == "__main__":
     suit = 'Spades'
+    junk = 'Junk'
     rank =  "K"
 
-    #Validating Suit
-    try:
-        if suit not in Card.suit_list:
-            raise ValueError("Invalid Suit")
-    except ValueError:
-        print(f"Invalid Suit: {suit}")
-
-    #validating rank
     try:
         my_card = Card(suit, rank)
-        print(my_card)
-        print(my_card.rank)
-        print(my_card.value)
+    except:
+        print(f"Invalid Suit: {suit}")
 
-    except ValueError:
-        print(f"Invalid Rank: {rank}")
-    #print(my_card)
+    try:
+        my_card = Card(junk, rank)
+    except:
+        print(f"Invalid Suit: {junk}")
+    #validating rank
+
+
 
 

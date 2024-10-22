@@ -8,6 +8,17 @@ import os
 class PontoonGame(object):
 
     def __init__(self):
+        """
+        PontoonGame represents an instance of a game of Pontoon.
+
+        The PontoonGame card is reponsible for setting up the game. Thi
+        This involves:
+        Creating a deck
+        Creating a dealer
+        Adding players
+        This class also holds a _game_leader reference to a player instance, which is the current game leader based on hand value
+        """
+
         self._pontoon = "PONTOON"
         self._deck = Deck()     #pontoon HAS A deck class#
         self._players = []      #this will hold the players for the game#
@@ -32,6 +43,15 @@ class PontoonGame(object):
 
 class Terminal(object):
     def __init__(self):
+        """
+        The Terminal Class encapsulates all interaction with the game prompt
+
+        THe Terminal Class is responsible for:
+        Getting the number of players wishing to play the game.
+        Asking a player whether they want to hit or stick
+        Printing the 'table' info to screen
+        """
+
         self._name = "Terminal"
 
     def get_player_count(self):
