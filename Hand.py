@@ -1,5 +1,5 @@
+# Student Number: 123411792
 from PontoonCard import PontoonCard
-#obj: add one card to hand
 
 class Hand(object):
     """

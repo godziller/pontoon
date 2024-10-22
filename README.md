@@ -13,7 +13,7 @@ The game will loop through all players individually asking them to hit or stick.
 Finally, the dealer object is requested to play, given the highest active count at the table to beat.
 
 ## Design
-Classes: 
+### Classes: 
 
 * Card: Simple Card Class. Expected to be inherited with game specific value
 * PontoonCard: subclass of Card. Sets face cards to 10 and Ace to 11
@@ -22,6 +22,17 @@ Classes:
 * Player: Represents a player
 * Dealier: Special Player - no interaction, a play_out() will finish out game
 * PontoonGame: Need a class for pulling everything together and contorlling the game logic
+
+### OOP Principles
+
+- Inheritance/is-a: Dealer is a Player. PontoonCard is a Card
+- Composition/Aggregation: Player has-a Hand. PontoonGame has-a Deck/Dealer
+- protected method _calc_value() in PontoonCard
+- protected variables used across the code base
+- ample use of properties
+- generious use of docstrings for classes and non-obvious methods
+- test code in each class's __name__ block
+- sharable - used github to share code.
 
 ```mermaid
 
